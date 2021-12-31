@@ -40,13 +40,33 @@ class ListCityViewController: UIViewController {
 }
 
 extension ListCityViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = data[indexPath.row].name
+        cell.textLabel?.text = data[indexPath.row].name + "ROW: \(indexPath.row)"
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   willDisplay cell: UITableViewCell,
+                   forRowAt indexPath: IndexPath) {
+        if indexPath.row >= data.count - 3 {
+            presenter?.getCity(completion: { result in
+                switch result {
+                case .success(let cities):
+                    self.data.append(contentsOf: cities)
+                    DispatchQueue.main.sync {
+                        self.tableView.reloadData()
+                    }
+                case .failure:
+                    print("ERROR")
+                }
+            })
+        }
     }
 }
