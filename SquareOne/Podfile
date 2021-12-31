@@ -1,0 +1,9 @@
+platform :ios, '13.0'
+use_frameworks!
+
+target 'SquareOne' do
+
+  pod 'RealmSwift', '~> 10.20.1'
+  pod 'Moya', '~> 15.0'
+
+end
