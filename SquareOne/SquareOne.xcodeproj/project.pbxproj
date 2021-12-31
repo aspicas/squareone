@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		4AA2553768AFC9110078971C /* Pods_SquareOne.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18B8B9BD3DFD6226BF75380E /* Pods_SquareOne.framework */; };
+		7BB2EB85277F0C4E00D64BCC /* SquareService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB2EB84277F0C4E00D64BCC /* SquareService.swift */; };
+		7BB2EB89277F105A00D64BCC /* SquareProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB2EB88277F105A00D64BCC /* SquareProviderProtocol.swift */; };
+		7BB2EB8B277F109600D64BCC /* SquareProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB2EB8A277F109600D64BCC /* SquareProvider.swift */; };
+		7BB2EB8E277F147800D64BCC /* CityInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB2EB8D277F147800D64BCC /* CityInfo.swift */; };
+		7BB2EB90277F159B00D64BCC /* CityInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB2EB8F277F159B00D64BCC /* CityInfoData.swift */; };
+		7BB2EB92277F15BB00D64BCC /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB2EB91277F15BB00D64BCC /* City.swift */; };
+		7BB2EB94277F15D300D64BCC /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB2EB93277F15D300D64BCC /* Pagination.swift */; };
+		7BB2EB96277F15F500D64BCC /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB2EB95277F15F500D64BCC /* Country.swift */; };
+		7BB2EB99277F17CB00D64BCC /* MappingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB2EB98277F17CB00D64BCC /* MappingError.swift */; };
 		7BCC13CE277F03E400D045A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCC13CD277F03E400D045A3 /* AppDelegate.swift */; };
 		7BCC13D0277F03E400D045A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCC13CF277F03E400D045A3 /* SceneDelegate.swift */; };
 		7BCC13D2277F03E400D045A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCC13D1277F03E400D045A3 /* ViewController.swift */; };
@@ -19,6 +28,15 @@
 /* Begin PBXFileReference section */
 		18B8B9BD3DFD6226BF75380E /* Pods_SquareOne.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SquareOne.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F53BBD8A248E1E1677E6595 /* Pods-SquareOne.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SquareOne.debug.xcconfig"; path = "Target Support Files/Pods-SquareOne/Pods-SquareOne.debug.xcconfig"; sourceTree = "<group>"; };
+		7BB2EB84277F0C4E00D64BCC /* SquareService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareService.swift; sourceTree = "<group>"; };
+		7BB2EB88277F105A00D64BCC /* SquareProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareProviderProtocol.swift; sourceTree = "<group>"; };
+		7BB2EB8A277F109600D64BCC /* SquareProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareProvider.swift; sourceTree = "<group>"; };
+		7BB2EB8D277F147800D64BCC /* CityInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityInfo.swift; sourceTree = "<group>"; };
+		7BB2EB8F277F159B00D64BCC /* CityInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityInfoData.swift; sourceTree = "<group>"; };
+		7BB2EB91277F15BB00D64BCC /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		7BB2EB93277F15D300D64BCC /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
+		7BB2EB95277F15F500D64BCC /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		7BB2EB98277F17CB00D64BCC /* MappingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingError.swift; sourceTree = "<group>"; };
 		7BCC13CA277F03E400D045A3 /* SquareOne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SquareOne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BCC13CD277F03E400D045A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BCC13CF277F03E400D045A3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,8 +66,45 @@
 				4F53BBD8A248E1E1677E6595 /* Pods-SquareOne.debug.xcconfig */,
 				BBAD110446F8336C51EC74B6 /* Pods-SquareOne.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		7BB2EB86277F0F9700D64BCC /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				7BB2EB97277F179E00D64BCC /* Error */,
+				7BB2EB84277F0C4E00D64BCC /* SquareService.swift */,
+				7BB2EB88277F105A00D64BCC /* SquareProviderProtocol.swift */,
+				7BB2EB8A277F109600D64BCC /* SquareProvider.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		7BB2EB87277F0F9D00D64BCC /* DB */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DB;
+			sourceTree = "<group>";
+		};
+		7BB2EB8C277F140E00D64BCC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7BB2EB8D277F147800D64BCC /* CityInfo.swift */,
+				7BB2EB95277F15F500D64BCC /* Country.swift */,
+				7BB2EB93277F15D300D64BCC /* Pagination.swift */,
+				7BB2EB91277F15BB00D64BCC /* City.swift */,
+				7BB2EB8F277F159B00D64BCC /* CityInfoData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7BB2EB97277F179E00D64BCC /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				7BB2EB98277F17CB00D64BCC /* MappingError.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 		7BCC13C1277F03E400D045A3 = {
@@ -73,6 +128,7 @@
 		7BCC13CC277F03E400D045A3 /* SquareOne */ = {
 			isa = PBXGroup;
 			children = (
+				7BB2EB8C277F140E00D64BCC /* Model */,
 				7BCC13E1277F041F00D045A3 /* AppDelegate */,
 				7BCC13E4277F046000D045A3 /* Features */,
 				7BCC13E2277F043400D045A3 /* Networking */,
@@ -93,6 +149,8 @@
 		7BCC13E2277F043400D045A3 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				7BB2EB87277F0F9D00D64BCC /* DB */,
+				7BB2EB86277F0F9700D64BCC /* Provider */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -239,9 +297,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BB2EB85277F0C4E00D64BCC /* SquareService.swift in Sources */,
+				7BB2EB89277F105A00D64BCC /* SquareProviderProtocol.swift in Sources */,
+				7BB2EB92277F15BB00D64BCC /* City.swift in Sources */,
 				7BCC13D2277F03E400D045A3 /* ViewController.swift in Sources */,
 				7BCC13CE277F03E400D045A3 /* AppDelegate.swift in Sources */,
+				7BB2EB90277F159B00D64BCC /* CityInfoData.swift in Sources */,
+				7BB2EB8E277F147800D64BCC /* CityInfo.swift in Sources */,
+				7BB2EB99277F17CB00D64BCC /* MappingError.swift in Sources */,
+				7BB2EB96277F15F500D64BCC /* Country.swift in Sources */,
+				7BB2EB94277F15D300D64BCC /* Pagination.swift in Sources */,
 				7BCC13D0277F03E400D045A3 /* SceneDelegate.swift in Sources */,
+				7BB2EB8B277F109600D64BCC /* SquareProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
