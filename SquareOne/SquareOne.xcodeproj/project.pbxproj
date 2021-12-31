@@ -17,9 +17,12 @@
 		7BB2EB94277F15D300D64BCC /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB2EB93277F15D300D64BCC /* Pagination.swift */; };
 		7BB2EB96277F15F500D64BCC /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB2EB95277F15F500D64BCC /* Country.swift */; };
 		7BB2EB99277F17CB00D64BCC /* MappingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB2EB98277F17CB00D64BCC /* MappingError.swift */; };
+		7BB2EBA0277F41CE00D64BCC /* CityInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB2EB9F277F41CE00D64BCC /* CityInteractor.swift */; };
+		7BB2EBA2277F510100D64BCC /* CityPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB2EBA1277F510100D64BCC /* CityPresenter.swift */; };
+		7BB2EBA4277F52C500D64BCC /* ListCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB2EBA3277F52C500D64BCC /* ListCityViewController.swift */; };
+		7BB2EBA6277F561400D64BCC /* CityRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB2EBA5277F561400D64BCC /* CityRouter.swift */; };
 		7BCC13CE277F03E400D045A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCC13CD277F03E400D045A3 /* AppDelegate.swift */; };
 		7BCC13D0277F03E400D045A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCC13CF277F03E400D045A3 /* SceneDelegate.swift */; };
-		7BCC13D2277F03E400D045A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCC13D1277F03E400D045A3 /* ViewController.swift */; };
 		7BCC13D5277F03E400D045A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BCC13D3277F03E400D045A3 /* Main.storyboard */; };
 		7BCC13D7277F03E600D045A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BCC13D6277F03E600D045A3 /* Assets.xcassets */; };
 		7BCC13DA277F03E600D045A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BCC13D8277F03E600D045A3 /* LaunchScreen.storyboard */; };
@@ -37,10 +40,13 @@
 		7BB2EB93277F15D300D64BCC /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
 		7BB2EB95277F15F500D64BCC /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		7BB2EB98277F17CB00D64BCC /* MappingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingError.swift; sourceTree = "<group>"; };
+		7BB2EB9F277F41CE00D64BCC /* CityInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityInteractor.swift; sourceTree = "<group>"; };
+		7BB2EBA1277F510100D64BCC /* CityPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityPresenter.swift; sourceTree = "<group>"; };
+		7BB2EBA3277F52C500D64BCC /* ListCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCityViewController.swift; sourceTree = "<group>"; };
+		7BB2EBA5277F561400D64BCC /* CityRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityRouter.swift; sourceTree = "<group>"; };
 		7BCC13CA277F03E400D045A3 /* SquareOne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SquareOne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BCC13CD277F03E400D045A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BCC13CF277F03E400D045A3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7BCC13D1277F03E400D045A3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7BCC13D4277F03E400D045A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7BCC13D6277F03E600D045A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7BCC13D9277F03E600D045A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -87,7 +93,7 @@
 			path = DB;
 			sourceTree = "<group>";
 		};
-		7BB2EB8C277F140E00D64BCC /* Model */ = {
+		7BB2EB8C277F140E00D64BCC /* Entity */ = {
 			isa = PBXGroup;
 			children = (
 				7BB2EB8D277F147800D64BCC /* CityInfo.swift */,
@@ -96,7 +102,7 @@
 				7BB2EB91277F15BB00D64BCC /* City.swift */,
 				7BB2EB8F277F159B00D64BCC /* CityInfoData.swift */,
 			);
-			path = Model;
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		7BB2EB97277F179E00D64BCC /* Error */ = {
@@ -105,6 +111,50 @@
 				7BB2EB98277F17CB00D64BCC /* MappingError.swift */,
 			);
 			path = Error;
+			sourceTree = "<group>";
+		};
+		7BB2EB9A277F29F000D64BCC /* City */ = {
+			isa = PBXGroup;
+			children = (
+				7BB2EB9E277F2AA800D64BCC /* Views */,
+				7BB2EB9D277F2A4600D64BCC /* Interactors */,
+				7BB2EB9C277F2A3F00D64BCC /* Presenters */,
+				7BB2EB9B277F2A3900D64BCC /* Routers */,
+			);
+			path = City;
+			sourceTree = "<group>";
+		};
+		7BB2EB9B277F2A3900D64BCC /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				7BB2EBA5277F561400D64BCC /* CityRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		7BB2EB9C277F2A3F00D64BCC /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				7BB2EBA1277F510100D64BCC /* CityPresenter.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		7BB2EB9D277F2A4600D64BCC /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				7BB2EB9F277F41CE00D64BCC /* CityInteractor.swift */,
+			);
+			path = Interactors;
+			sourceTree = "<group>";
+		};
+		7BB2EB9E277F2AA800D64BCC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7BCC13D3277F03E400D045A3 /* Main.storyboard */,
+				7BB2EBA3277F52C500D64BCC /* ListCityViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		7BCC13C1277F03E400D045A3 = {
@@ -128,7 +178,7 @@
 		7BCC13CC277F03E400D045A3 /* SquareOne */ = {
 			isa = PBXGroup;
 			children = (
-				7BB2EB8C277F140E00D64BCC /* Model */,
+				7BB2EB8C277F140E00D64BCC /* Entity */,
 				7BCC13E1277F041F00D045A3 /* AppDelegate */,
 				7BCC13E4277F046000D045A3 /* Features */,
 				7BCC13E2277F043400D045A3 /* Networking */,
@@ -168,8 +218,7 @@
 		7BCC13E4277F046000D045A3 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				7BCC13D1277F03E400D045A3 /* ViewController.swift */,
-				7BCC13D3277F03E400D045A3 /* Main.storyboard */,
+				7BB2EB9A277F29F000D64BCC /* City */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -299,12 +348,15 @@
 			files = (
 				7BB2EB85277F0C4E00D64BCC /* SquareService.swift in Sources */,
 				7BB2EB89277F105A00D64BCC /* SquareProviderProtocol.swift in Sources */,
+				7BB2EBA0277F41CE00D64BCC /* CityInteractor.swift in Sources */,
+				7BB2EBA2277F510100D64BCC /* CityPresenter.swift in Sources */,
 				7BB2EB92277F15BB00D64BCC /* City.swift in Sources */,
-				7BCC13D2277F03E400D045A3 /* ViewController.swift in Sources */,
 				7BCC13CE277F03E400D045A3 /* AppDelegate.swift in Sources */,
 				7BB2EB90277F159B00D64BCC /* CityInfoData.swift in Sources */,
+				7BB2EBA6277F561400D64BCC /* CityRouter.swift in Sources */,
 				7BB2EB8E277F147800D64BCC /* CityInfo.swift in Sources */,
 				7BB2EB99277F17CB00D64BCC /* MappingError.swift in Sources */,
+				7BB2EBA4277F52C500D64BCC /* ListCityViewController.swift in Sources */,
 				7BB2EB96277F15F500D64BCC /* Country.swift in Sources */,
 				7BB2EB94277F15D300D64BCC /* Pagination.swift in Sources */,
 				7BCC13D0277F03E400D045A3 /* SceneDelegate.swift in Sources */,
@@ -463,7 +515,6 @@
 				INFOPLIST_FILE = SquareOne/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -493,7 +544,6 @@
 				INFOPLIST_FILE = SquareOne/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
