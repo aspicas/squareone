@@ -12,15 +12,18 @@ class SquareProvider: SquareProviderProtocol {
     
     private let provider: MoyaProvider<SquareService> =
         MoyaProvider<SquareService>(callbackQueue: .global(qos: .background))
+    private var previousRequests: [Cancellable] = []
     
     func getCity(page: Int,
                  include: String,
                  filter: String,
                  completion: @escaping ((Result<CityInfoData, Error>) -> Void)) {
         let checkPage = page > 0 ? page : 1
-        provider.request(.getCity(page: checkPage,
-                                  include: include,
-                                  filter: filter)) { result in
+        cancelPreviousRequests()
+        let request = provider.request(.getCity(
+            page: checkPage,
+            include: include,
+            filter: filter)) { result in
             switch result {
             case .success(let response):
                 do {
@@ -33,5 +36,11 @@ class SquareProvider: SquareProviderProtocol {
                 completion(.failure(error))
             }
         }
+        previousRequests.append(request)
+    }
+    
+    private func cancelPreviousRequests() {
+        previousRequests.forEach({$0.cancel()})
+        previousRequests.removeAll()
     }
 }
