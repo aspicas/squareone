@@ -56,7 +56,7 @@ extension ListCityViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = data[indexPath.row].name + "ROW: \(indexPath.row)"
+        cell.textLabel?.text = data[indexPath.row].name
         return cell
     }
     

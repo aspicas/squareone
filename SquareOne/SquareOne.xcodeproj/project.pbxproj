@@ -26,6 +26,8 @@
 		7BCC13D5277F03E400D045A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BCC13D3277F03E400D045A3 /* Main.storyboard */; };
 		7BCC13D7277F03E600D045A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BCC13D6277F03E600D045A3 /* Assets.xcassets */; };
 		7BCC13DA277F03E600D045A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BCC13D8277F03E600D045A3 /* LaunchScreen.storyboard */; };
+		7BCD54F42781CAE7006BA876 /* DatabaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD54F32781CAE7006BA876 /* DatabaseProtocol.swift */; };
+		7BCD54F62781CB46006BA876 /* RealmDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD54F52781CB46006BA876 /* RealmDatabase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,8 @@
 		7BCC13D6277F03E600D045A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7BCC13D9277F03E600D045A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7BCC13DB277F03E600D045A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7BCD54F32781CAE7006BA876 /* DatabaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseProtocol.swift; sourceTree = "<group>"; };
+		7BCD54F52781CB46006BA876 /* RealmDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDatabase.swift; sourceTree = "<group>"; };
 		BBAD110446F8336C51EC74B6 /* Pods-SquareOne.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SquareOne.release.xcconfig"; path = "Target Support Files/Pods-SquareOne/Pods-SquareOne.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +93,8 @@
 		7BB2EB87277F0F9D00D64BCC /* DB */ = {
 			isa = PBXGroup;
 			children = (
+				7BCD54F32781CAE7006BA876 /* DatabaseProtocol.swift */,
+				7BCD54F52781CB46006BA876 /* RealmDatabase.swift */,
 			);
 			path = DB;
 			sourceTree = "<group>";
@@ -354,12 +360,14 @@
 				7BCC13CE277F03E400D045A3 /* AppDelegate.swift in Sources */,
 				7BB2EB90277F159B00D64BCC /* CityInfoData.swift in Sources */,
 				7BB2EBA6277F561400D64BCC /* CityRouter.swift in Sources */,
+				7BCD54F42781CAE7006BA876 /* DatabaseProtocol.swift in Sources */,
 				7BB2EB8E277F147800D64BCC /* CityInfo.swift in Sources */,
 				7BB2EB99277F17CB00D64BCC /* MappingError.swift in Sources */,
 				7BB2EBA4277F52C500D64BCC /* ListCityViewController.swift in Sources */,
 				7BB2EB96277F15F500D64BCC /* Country.swift in Sources */,
 				7BB2EB94277F15D300D64BCC /* Pagination.swift in Sources */,
 				7BCC13D0277F03E400D045A3 /* SceneDelegate.swift in Sources */,
+				7BCD54F62781CB46006BA876 /* RealmDatabase.swift in Sources */,
 				7BB2EB8B277F109600D64BCC /* SquareProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

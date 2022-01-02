@@ -10,11 +10,12 @@ import Foundation
 class CityInteractor {
     private var provider: SquareProviderProtocol
     private var page: Int
-    private var lastPage: Int = Int.max
+    private var lastPage: Int
     
     init(provider: SquareProviderProtocol) {
         self.provider = provider
         page = 0
+        lastPage = Int.max
     }
     
     func getCity(filter: String,
