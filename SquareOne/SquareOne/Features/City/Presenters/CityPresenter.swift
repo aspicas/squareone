@@ -9,9 +9,12 @@ import Foundation
 
 class CityPresenter {
     private var interactor: CityInteractor
+    private var router: CityRouter
     
-    init(interactor: CityInteractor) {
+    init(interactor: CityInteractor,
+         router: CityRouter) {
         self.interactor = interactor
+        self.router = router
     }
     
     func getCity(completion: @escaping ((Result<[City], Error>) -> Void)) {
@@ -28,5 +31,9 @@ class CityPresenter {
     
     func resetPagination() {
         interactor.resetPagination()
+    }
+    
+    func goToMap(cities: [City]) {
+        router.goToMap(cities: cities)
     }
 }

@@ -10,6 +10,7 @@ import UIKit
 class ListCityViewController: UIViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var mapButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
     private var data: [City] = [] {
@@ -25,6 +26,7 @@ class ListCityViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupButton()
         setupSearchBar()
         setupTableView()
         presenter?.getCity(completion: { result in
@@ -41,6 +43,10 @@ class ListCityViewController: UIViewController {
         searchBar.delegate = self
     }
     
+    private func setupButton() {
+        mapButton.setTitle("", for: .normal)
+    }
+    
     private func setCities(result: Result<[City], Error>) {
         switch result {
         case .success(let cities):
@@ -49,6 +55,11 @@ class ListCityViewController: UIViewController {
             print("ERROR")
         }
     }
+    
+    @IBAction func tapMapButton(_ sender: UIButton) {
+        presenter?.goToMap(cities: data)
+    }
+    
 }
 
 extension ListCityViewController: UITableViewDelegate, UITableViewDataSource {

@@ -15,8 +15,21 @@ class CityRouter {
             .instantiateViewController(withIdentifier: "ListCityViewController")
             as! ListCityViewController
         let interactor = CityInteractor(provider: SquareProvider())
-        let presenter = CityPresenter(interactor: interactor)
+        let router = CityRouter(view: controller)
+        let presenter = CityPresenter(interactor: interactor,
+                                      router: router)
         controller.presenter = presenter
         return controller
+    }
+    
+    private var view: UIViewController
+    
+    init(view: UIViewController) {
+        self.view = view
+    }
+    
+    func goToMap(cities: [City]) {
+        let controller = MapRouter.makeView(cities: cities)
+        view.present(controller, animated: true)
     }
 }

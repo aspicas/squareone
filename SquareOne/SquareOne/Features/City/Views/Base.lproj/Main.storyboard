@@ -18,27 +18,42 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="G32-0w-ssk">
-                                <rect key="frame" x="0.0" y="44" width="414" height="51"/>
+                                <rect key="frame" x="0.0" y="44" width="354" height="51"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tCr-Ae-iXl">
                                 <rect key="frame" x="0.0" y="95" width="414" height="767"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pp9-NX-Q9p">
+                                <rect key="frame" x="354" y="44" width="60" height="51"/>
+                                <color key="tintColor" systemColor="systemBlueColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="map" catalog="system"/>
+                                <connections>
+                                    <action selector="tapMapButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="soU-pf-l2z"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pp9-NX-Q9p" secondAttribute="trailing" id="655-t0-Vcq"/>
                             <constraint firstItem="tCr-Ae-iXl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BB3-Un-CLz"/>
+                            <constraint firstItem="pp9-NX-Q9p" firstAttribute="leading" secondItem="G32-0w-ssk" secondAttribute="trailing" id="Dav-AJ-OyC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tCr-Ae-iXl" secondAttribute="trailing" id="Gk1-Fv-S0U"/>
                             <constraint firstItem="tCr-Ae-iXl" firstAttribute="top" secondItem="G32-0w-ssk" secondAttribute="bottom" id="HGe-qL-dUy"/>
                             <constraint firstItem="G32-0w-ssk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Oqx-x3-DHx"/>
+                            <constraint firstItem="pp9-NX-Q9p" firstAttribute="height" secondItem="G32-0w-ssk" secondAttribute="height" id="SYv-As-IzH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tCr-Ae-iXl" secondAttribute="bottom" id="Urj-ZN-twU"/>
                             <constraint firstItem="G32-0w-ssk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="cWP-xT-5Xz"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="G32-0w-ssk" secondAttribute="trailing" id="nmy-9g-u7s"/>
+                            <constraint firstItem="pp9-NX-Q9p" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="efU-Bb-ZZD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="G32-0w-ssk" secondAttribute="trailing" constant="60" id="nmy-9g-u7s"/>
+                            <constraint firstItem="tCr-Ae-iXl" firstAttribute="top" secondItem="pp9-NX-Q9p" secondAttribute="bottom" id="xuJ-N1-675"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="mapButton" destination="pp9-NX-Q9p" id="vG6-MQ-GN6"/>
                         <outlet property="searchBar" destination="G32-0w-ssk" id="z2m-X9-SLG"/>
                         <outlet property="tableView" destination="tCr-Ae-iXl" id="PN2-2I-M7U"/>
                     </connections>
@@ -47,10 +62,60 @@
             </objects>
             <point key="canvasLocation" x="89.855072463768124" y="69.642857142857139"/>
         </scene>
+        <!--Map City View Controller-->
+        <scene sceneID="5Du-pd-ZJc">
+            <objects>
+                <viewController storyboardIdentifier="MapCityViewController" id="Q9A-ld-SF6" customClass="MapCityViewController" customModule="SquareOne" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="reN-dx-fDe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="rK8-lm-fdS">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jG7-iK-nxl">
+                                <rect key="frame" x="354" y="64" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="LrM-NT-lkh"/>
+                                    <constraint firstAttribute="width" secondItem="jG7-iK-nxl" secondAttribute="height" multiplier="1:1" id="lEc-se-EyY"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemBlueColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrow.down.square" catalog="system"/>
+                                <connections>
+                                    <action selector="backButtonTap:" destination="Q9A-ld-SF6" eventType="touchUpInside" id="6nH-RN-e3N"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="YDx-q4-fUI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rK8-lm-fdS" firstAttribute="leading" secondItem="YDx-q4-fUI" secondAttribute="leading" id="6wD-R9-F30"/>
+                            <constraint firstItem="jG7-iK-nxl" firstAttribute="top" secondItem="YDx-q4-fUI" secondAttribute="top" constant="20" id="Bk8-26-cb9"/>
+                            <constraint firstItem="YDx-q4-fUI" firstAttribute="trailing" secondItem="jG7-iK-nxl" secondAttribute="trailing" constant="20" id="OND-iT-wuO"/>
+                            <constraint firstItem="YDx-q4-fUI" firstAttribute="trailing" secondItem="rK8-lm-fdS" secondAttribute="trailing" id="QXm-gB-qK1"/>
+                            <constraint firstItem="rK8-lm-fdS" firstAttribute="top" secondItem="YDx-q4-fUI" secondAttribute="top" id="ZO0-xu-eL8"/>
+                            <constraint firstItem="YDx-q4-fUI" firstAttribute="bottom" secondItem="rK8-lm-fdS" secondAttribute="bottom" id="gL6-VQ-fXD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="jG7-iK-nxl" id="W2x-Ml-A75"/>
+                        <outlet property="mapView" destination="rK8-lm-fdS" id="EO3-SM-ZKE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CZC-yB-nKt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="930" y="66"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="arrow.down.square" catalog="system" width="128" height="114"/>
+        <image name="map" catalog="system" width="128" height="110"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
