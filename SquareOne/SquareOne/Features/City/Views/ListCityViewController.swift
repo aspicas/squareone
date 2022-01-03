@@ -80,7 +80,9 @@ extension ListCityViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         filter = searchText
         presenter?.resetPagination()
-        presenter?.getCity(filter: searchText, completion: { result in
+        presenter?.getCity(filter: searchText,
+                           forceUpdate: true,
+                           completion: { result in
             self.setCities(result: result)
         })
     }

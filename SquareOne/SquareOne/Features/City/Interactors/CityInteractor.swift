@@ -12,15 +12,18 @@ class CityInteractor {
     private var page: Int
     private var lastPage: Int
     private var db: DatabaseProtocol
+    private var successByError: Bool
     
     init(provider: SquareProviderProtocol) {
         self.provider = provider
+        successByError = false
         page = 0
         lastPage = Int.max
         db = RealmDatabase()
     }
     
     func getCity(filter: String,
+                 forceUpdate: Bool,
                  completion: @escaping ((Result<[City], Error>) -> Void)) {
         page += 1
         if self.page > lastPage {
@@ -31,6 +34,7 @@ class CityInteractor {
                          filter: filter.lowercased()) { result in
             switch result {
             case .success(let cityInfo):
+                self.successByError = false
                 self.lastPage = cityInfo.pagination.lastPage
                 cityInfo.items.forEach { city in
                     self.db.add(object: city)
@@ -38,9 +42,10 @@ class CityInteractor {
                 let cities = self.findCityData(filter: filter.lowercased())
                 completion(.success(cities))
             case .failure(let error):
-                self.page -= 1
+                self.resetPagination()
                 let cities = self.findCityData(filter: filter.lowercased())
-                if cities.count > 0 {
+                if cities.count > 0 && (forceUpdate || !self.successByError) {
+                    self.successByError = true
                     completion(.success(cities))
                     return
                 }

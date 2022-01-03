@@ -15,11 +15,15 @@ class CityPresenter {
     }
     
     func getCity(completion: @escaping ((Result<[City], Error>) -> Void)) {
-        interactor.getCity(filter: "", completion: completion)
+        interactor.getCity(filter: "", forceUpdate: false, completion: completion)
     }
     
     func getCity(filter: String, completion: @escaping ((Result<[City], Error>) -> Void)) {
-        interactor.getCity(filter: filter, completion: completion)
+        interactor.getCity(filter: filter, forceUpdate: false, completion: completion)
+    }
+    
+    func getCity(filter: String, forceUpdate: Bool, completion: @escaping ((Result<[City], Error>) -> Void)) {
+        interactor.getCity(filter: filter, forceUpdate: forceUpdate, completion: completion)
     }
     
     func resetPagination() {
