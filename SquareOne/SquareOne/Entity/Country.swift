@@ -20,3 +20,25 @@ struct Country: Codable {
         case continentID = "continent_id"
     }
 }
+
+extension Country: HandleObjectProtocol {
+    init(managedObject: CountryObject) {
+        id = managedObject.id
+        name = managedObject.name
+        code = managedObject.code
+        createdAt = managedObject.createdAt
+        updatedAt = managedObject.updatedAt
+        continentID = managedObject.continentID
+    }
+    
+    func managedObject() -> CountryObject {
+        let object = CountryObject()
+        object.id = id
+        object.name = name
+        object.code = code
+        object.createdAt = createdAt
+        object.updatedAt = updatedAt
+        object.continentID = continentID
+        return object
+    }
+}

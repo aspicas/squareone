@@ -6,8 +6,8 @@
 //
 
 import Foundation
-import RealmSwift
 
 protocol DatabaseProtocol {
-
+    func add<T>(object: T) where T: HandleObjectProtocol
+    func getAll<T>(type: T.Type, filter: NSPredicate?, sort: String) -> FetchData<T> where T: HandleObjectProtocol
 }

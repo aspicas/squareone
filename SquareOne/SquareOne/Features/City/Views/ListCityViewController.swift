@@ -28,12 +28,7 @@ class ListCityViewController: UIViewController {
         setupSearchBar()
         setupTableView()
         presenter?.getCity(completion: { result in
-            switch result {
-            case .success(let cities):
-                self.data = cities
-            case .failure:
-                print("ERROR")
-            }
+            self.setCities(result: result)
         })
     }
     
@@ -44,6 +39,15 @@ class ListCityViewController: UIViewController {
 
     private func setupSearchBar() {
         searchBar.delegate = self
+    }
+    
+    private func setCities(result: Result<[City], Error>) {
+        switch result {
+        case .success(let cities):
+            self.data = cities
+        case .failure:
+            print("ERROR")
+        }
     }
 }
 
@@ -66,12 +70,7 @@ extension ListCityViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row >= data.count - 3 {
             presenter?.getCity(filter: self.filter,
                                completion: { result in
-                switch result {
-                case .success(let cities):
-                    self.data.append(contentsOf: cities)
-                case .failure:
-                    print("ERROR")
-                }
+                self.setCities(result: result)
             })
         }
     }
@@ -82,12 +81,7 @@ extension ListCityViewController: UISearchBarDelegate {
         filter = searchText
         presenter?.resetPagination()
         presenter?.getCity(filter: searchText, completion: { result in
-            switch result {
-            case .success(let cities):
-                self.data = cities
-            case .failure:
-                print("ERROR")
-            }
+            self.setCities(result: result)
         })
     }
 }
